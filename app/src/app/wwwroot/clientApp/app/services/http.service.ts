@@ -27,8 +27,7 @@ export default class HttpService {
             .catch(error => this.parseErrorMsg(error));
     }
 
-    private parseErrorMsg(error: Response | any) {
-        alert(error);
+    private parseErrorMsg(error: Response | any) {      
         let errMsg: string;
         if (error instanceof Response) {
             const body = error.json() || '';

@@ -33,7 +33,6 @@ var HttpService = (function () {
             .catch(function (error) { return _this.parseErrorMsg(error); });
     };
     HttpService.prototype.parseErrorMsg = function (error) {
-        alert(error);
         var errMsg;
         if (error instanceof http_1.Response) {
             var body = error.json() || '';
