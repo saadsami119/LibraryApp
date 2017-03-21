@@ -21,15 +21,17 @@ var NavBarComponent = (function () {
         var _this = this;
         this.appStoreService.subscribeUsernameChanges().subscribe(function (username) {
             _this.loginedInUserName = username;
-            _this.isUserLoggedIn = _this.loginedInUserName !== null;
+            _this.isUserLoggedIn = _this.loginedInUserName !== undefined;
         });
         this.appStoreService.subscribeCartChanges().subscribe(function (books) {
             _this.checkoutBooks = books;
         });
     };
     NavBarComponent.prototype.onLogOut = function () {
-        this.appStoreService.setUsername("");
+        this.appStoreService.setUsername(undefined);
+        this.appStoreService.clearCart();
         this._router.navigate(["login"]);
+        this.isUserLoggedIn = false;
     };
     return NavBarComponent;
 }());

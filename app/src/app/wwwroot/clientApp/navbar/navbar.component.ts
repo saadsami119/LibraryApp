@@ -17,14 +17,14 @@ export default class NavBarComponent implements OnInit {
     constructor(
         private _router: Router,
         private appStoreService: AppStoreService) {
-        this.checkoutBooks = new Array<Book>();
+        this.checkoutBooks = new Array<Book>();        
     }
 
     ngOnInit() {
 
         this.appStoreService.subscribeUsernameChanges().subscribe(username => {
             this.loginedInUserName = username;
-            this.isUserLoggedIn = this.loginedInUserName !== null;
+            this.isUserLoggedIn = this.loginedInUserName !== undefined;
         });
 
         this.appStoreService.subscribeCartChanges().subscribe((books) => {
@@ -33,8 +33,10 @@ export default class NavBarComponent implements OnInit {
     }
 
     onLogOut() {
-        this.appStoreService.setUsername("");
+        this.appStoreService.setUsername(undefined);
+        this.appStoreService.clearCart();
         this._router.navigate(["login"]);
+        this.isUserLoggedIn = false;
     }
 
 }

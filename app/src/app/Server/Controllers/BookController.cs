@@ -16,10 +16,10 @@ namespace app.Server.Controllers
             _bookService = bookService;
         }
 
-       [HttpGet("name/{name?}/author/{author?}")]
+        [HttpGet("name/{name?}/author/{author?}")]
         public IActionResult GetBooks(string name = null, string author = null)
         {
-            var searchedBooks = _bookService.GetBooks(name);
+            var searchedBooks = _bookService.GetBooks(name, author);
 
             var data = searchedBooks.Select(b => new { Id = b.Id, Name = b.Name, Author = b.BooksAuthors.Select(x => x.Author.Name) });
 

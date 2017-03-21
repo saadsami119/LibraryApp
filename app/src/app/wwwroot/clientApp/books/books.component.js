@@ -28,7 +28,7 @@ var BooksComponent = (function () {
     };
     BooksComponent.prototype.addToCart = function (book) {
         if (this.isBookInCart(book.id)) {
-            this._alertService.showError(book.author + " has been already added to cart!");
+            this._alertService.showError(book.name + " has been already added to cart!");
             return;
         }
         this._appStoreService.addBookToCart(book);

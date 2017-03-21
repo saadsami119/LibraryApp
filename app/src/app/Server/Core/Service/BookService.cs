@@ -22,12 +22,12 @@ namespace app.Server.Core.Service
 
             if (!string.IsNullOrEmpty(name))
             {
-                result = result.Where(x => x.Name.Contains(name));
+                result = result.Where(x => x.Name.ToLower().Contains(name.ToLower()));
             }
             
             if (!string.IsNullOrEmpty(author))
             {
-                result = result.Where(x => x.BooksAuthors.Any(ba => ba.Author.Name.Contains(author)));
+                result = result.Where(x => x.BooksAuthors.Any(ba => ba.Author.Name.ToLower().Contains(author.ToLower())));
             }
 
             return result;

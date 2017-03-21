@@ -45,6 +45,7 @@ export default class AppStoreService {
 
     public clearCart() {
         this._cart = new Array<Book>();
+        this._cartSubject.next(this._cart);
     }   
    
 }

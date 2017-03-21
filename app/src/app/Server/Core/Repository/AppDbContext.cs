@@ -33,28 +33,85 @@ namespace app.Server.Core.Repository
 
         private void Seed()
         {
-            var author1 = new Author { Name = "A1" };
-            var author2 = new Author { Name = "A2" };
-            var author3 = new Author { Name = "A3" };
-            var author4 = new Author { Name = "A4" };
+            var book = new Book { Name = "Treasure Island" };
+            var author = new Author { Name = "Robert Louis Stevenson" };
+            book.BooksAuthors = new List<BooksAuthors> { new BooksAuthors { Author = author, Book = book } };
+            Books.Add(book);
 
-            var book1 = new Book { Name = "B1" };
-            book1.BooksAuthors = new List<BooksAuthors> { new BooksAuthors { Author = author1, Book = book1 }, new BooksAuthors { Author = author2, Book = book1 } };
-            Books.Add(book1);
+            book = new Book { Name = "Gulliver's Travels" };
+            author = new Author { Name = "Jonathan Swift" };
+            book.BooksAuthors = new List<BooksAuthors> { new BooksAuthors { Author = author, Book = book } };
+            Books.Add(book);
 
-            var book2 = new Book { Name = "B2" };
-            book2.BooksAuthors = new List<BooksAuthors> { new BooksAuthors { Author = author2, Book = book2 } };
-            Books.Add(book2);
+            book = new Book { Name = "The Odyssey" };
+            author = new Author { Name = "Homer" };
+            book.BooksAuthors = new List<BooksAuthors> { new BooksAuthors { Author = author, Book = book } };
+            Books.Add(book);
 
-            var book3 = new Book { Name = "B3" };
-            book3.BooksAuthors = new List<BooksAuthors> { new BooksAuthors { Author = author3, Book = book3 } };
-            Books.Add(book3);
+            book = new Book { Name = "King Solomon's Mines" };
+            author = new Author { Name = "H. Rider Haggard" };
+            book.BooksAuthors = new List<BooksAuthors> { new BooksAuthors { Author = author, Book = book } };
+            Books.Add(book);
 
-            var book4 = new Book { Name = "B4" };
-            book4.BooksAuthors = new List<BooksAuthors> { new BooksAuthors { Author = author4, Book = book4 } };
-            Books.Add(book4);
 
-            
+            book = new Book { Name = "Into the Wild" };
+            author = new Author { Name = "Jon Krakauer" };
+            book.BooksAuthors = new List<BooksAuthors> { new BooksAuthors { Author = author, Book = book } };
+            Books.Add(book);
+
+
+            book = new Book { Name = "Breakfast at Tiffany's" };
+            author = new Author { Name = "Truman Capote" };
+            book.BooksAuthors = new List<BooksAuthors> { new BooksAuthors { Author = author, Book = book } };
+            Books.Add(book);
+
+            book = new Book { Name = "The Devil Wears Prada" };
+            author = new Author { Name = "Lauren Weisberger" };
+            book.BooksAuthors = new List<BooksAuthors> { new BooksAuthors { Author = author, Book = book } };
+            Books.Add(book);
+
+            book = new Book { Name = "Jurassic Park" };
+            author = new Author { Name = "Michael Crichton" };
+            book.BooksAuthors = new List<BooksAuthors> { new BooksAuthors { Author = author, Book = book } };
+            Books.Add(book);
+
+            book = new Book { Name = "The Lord of the Rings: The Fellowship of the Ring" };
+            author = new Author { Name = "JRR Tolkien" };
+            book.BooksAuthors = new List<BooksAuthors> { new BooksAuthors { Author = author, Book = book } };
+            Books.Add(book);
+
+            book = new Book { Name = "Charlie and the Chocolate Factory" };
+            author = new Author { Name = "Roald Dahl" };
+            book.BooksAuthors = new List<BooksAuthors> { new BooksAuthors { Author = author, Book = book } };
+            Books.Add(book);
+
+            book = new Book { Name = "Alice in Wonderland " };
+            author = new Author { Name = "Lewis Carroll" };
+            book.BooksAuthors = new List<BooksAuthors> { new BooksAuthors { Author = author, Book = book } };
+            Books.Add(book);
+
+            book = new Book { Name = "The Wizard of Oz" };
+            author = new Author { Name = "L. Frank Baum" };
+            book.BooksAuthors = new List<BooksAuthors> { new BooksAuthors { Author = author, Book = book } };
+            Books.Add(book);
+
+            book = new Book { Name = "The Hunger Games" };
+            author = new Author { Name = "Suzanne Collins" };
+            book.BooksAuthors = new List<BooksAuthors> { new BooksAuthors { Author = author, Book = book } };
+            Books.Add(book);
+
+            book = new Book { Name = "The Hunger Games: Catching Fire" };
+            book.BooksAuthors = new List<BooksAuthors> { new BooksAuthors { Author = author, Book = book } };
+            Books.Add(book);
+
+            book = new Book { Name = "Harry Potter and the Sorcerer's Stone" };
+            author = new Author { Name = "J. K. Rowling" };
+            book.BooksAuthors = new List<BooksAuthors> { new BooksAuthors { Author = author, Book = book } };
+            Books.Add(book);
+
+            book = new Book { Name = "Harry Potter and the Philosopher's Stone" };
+            book.BooksAuthors = new List<BooksAuthors> { new BooksAuthors { Author = author, Book = book } };
+            Books.Add(book);
 
             var user = new User();
             user.Name = "saad@gmail.com";

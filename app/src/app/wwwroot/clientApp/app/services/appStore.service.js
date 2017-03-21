@@ -38,6 +38,7 @@ var AppStoreService = (function () {
     };
     AppStoreService.prototype.clearCart = function () {
         this._cart = new Array();
+        this._cartSubject.next(this._cart);
     };
     return AppStoreService;
 }());
