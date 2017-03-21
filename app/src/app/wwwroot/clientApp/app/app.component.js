@@ -21,6 +21,7 @@ var AppComponent = (function () {
         var _this = this;
         this.alerts = new Array();
         this._alertService.getAlert().subscribe(function (alert) {
+            _this.alerts = new Array();
             _this.alerts.push(alert);
         });
     };

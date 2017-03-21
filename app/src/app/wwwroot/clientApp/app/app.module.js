@@ -17,7 +17,7 @@ var router_1 = require("@angular/router");
 var books_component_1 = require("../books/books.component");
 var login_component_1 = require("../login/login.component");
 var alert_component_1 = require("../alert/alert.component");
-var navbar_component_1 = require("./navbar/navbar.component");
+var navbar_component_1 = require("../navbar/navbar.component");
 var checkout_component_1 = require("../checkout/checkout.component");
 var appRoutes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },

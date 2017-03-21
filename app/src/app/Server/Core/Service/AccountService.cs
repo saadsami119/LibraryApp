@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using app.Server.Core.Model;
+﻿using app.Server.Core.Model;
 using app.Server.Infrastructure.Repository;
 using app.Server.Infrastructure.Service;
 

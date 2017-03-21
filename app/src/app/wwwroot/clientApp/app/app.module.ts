@@ -7,7 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 import BooksComponent from "../books/books.component";
 import LoginComponent from "../login/login.component";
 import AlertComponent from "../alert/alert.component";
-import NavBarComponent from "./navbar/navbar.component";
+import NavBarComponent from "../navbar/navbar.component";
 import CheckoutComponent from "../checkout/checkout.component";
 
 

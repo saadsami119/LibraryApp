@@ -23,6 +23,7 @@ export class AppComponent implements OnInit {
         this.alerts = new Array<Alert>();
 
         this._alertService.getAlert().subscribe(alert => {
+            this.alerts = new Array<Alert>();
             this.alerts.push(alert);
         });
 

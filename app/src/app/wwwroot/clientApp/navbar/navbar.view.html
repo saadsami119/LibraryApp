@@ -1,14 +1,14 @@
-<div class="navbar navbar-default">
+<div class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
             <a class='navbar-brand' [routerLink]="['/']"> <span class='glyphicon glyphicon-home'></span> ABC Library</a>
         </div>
-        <div class='navbar-collapse collapse'>
+         <div class="navbar-collapse collapse navbar-responsive-collapse">
             <ul *ngIf="isUserLoggedIn" class='nav navbar-nav'>
                 <li [routerLinkActive]="['link-active']">
                     <a class="disabled" [routerLink]="['/books']">

@@ -1,11 +1,9 @@
-﻿using System;
-using app.Server.Core.Model;
+﻿using app.Server.Core.Model;
 using app.Server.Infrastructure.Service;
 using Microsoft.AspNetCore.Mvc;
 
 namespace app.Server.Controllers
 {
-    //[Route("api/[controller]")]
     public class AccountController : Controller
     {
         private readonly IAccountService _accountService;
