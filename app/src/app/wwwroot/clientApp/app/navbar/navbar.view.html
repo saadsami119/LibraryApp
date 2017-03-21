@@ -1,0 +1,44 @@
+<div class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class='navbar-brand' [routerLink]="['/']"> <span class='glyphicon glyphicon-home'></span> ABC Library</a>
+        </div>
+        <div class='navbar-collapse collapse'>
+            <ul *ngIf="isUserLoggedIn" class='nav navbar-nav'>
+                <li [routerLinkActive]="['link-active']">
+                    <a class="disabled" [routerLink]="['/books']">
+                        <span class='glyphicon glyphicon-list'></span> Books
+                    </a>
+                </li>
+
+            </ul>
+
+            <ul *ngIf="isUserLoggedIn" class="nav navbar-nav navbar-right">
+
+                <li [routerLinkActive]="['link-active']" class="active">
+                    <a [routerLink]="['/checkout']">Cart <span class="badge">
+                         <span class='glyphicon glyphicon-shopping-cart'></span>  {{checkoutBooks.length}}</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="javascript:void(0)">
+                        <span class="glyphicon glyphicon-user"></span> {{loginedInUserName}}
+                    </a>
+                </li>
+
+                <li [routerLinkActive]="['link-active']">
+                    <a class="disabled" (click)="onLogOut()">
+                        <span class='glyphicon glyphicon-log-out'></span> Logout
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>

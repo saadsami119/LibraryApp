@@ -1,0 +1,34 @@
+﻿using System;
+using app.Server.Core.Model;
+using app.Server.Core.ViewModel;
+using app.Server.Infrastructure.Service;
+using Microsoft.AspNetCore.Mvc;
+
+namespace app.Server.Controllers
+{
+    [Route("api/[controller]")]
+    public class CheckoutController : Controller
+    {
+        private readonly ICheckoutService _checkoutService;
+
+        public CheckoutController(ICheckoutService checkoutService)
+        {
+            _checkoutService = checkoutService;
+        }
+
+        [HttpPost]
+        public IActionResult CheckoutBook([FromBody]CheckoutViewModel checkoutViewModel)
+        {
+            try
+            {
+                _checkoutService.Checkout(checkoutViewModel.Books, checkoutViewModel.UserId);
+                return Json(new JsonResponse { Data =  true , Successful =  true , Error = null});
+            }
+            catch (Exception ex)
+            {
+                return Json(new JsonResponse { Data = null, Successful = false, Error = ex.Message });
+            }
+        }
+
+    }
+}

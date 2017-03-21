@@ -1,0 +1,38 @@
+<div class="col-sm-5 col-sm-offset-1">
+    <div class="panel panel-default">
+        <div class="panel-heading"> <span class="glyphicon glyphicon-log-in"></span> Login</div>
+        <div class="panel-body">
+            <form [formGroup]="loginForm">
+
+                <div class="form-group label-floating" [ngClass]="{'has-error': !loginForm.controls.username.valid}">
+                    <div class="form-group label-floating">
+                        <label class="control-label">Email address</label>
+                        <input type="text" class="form-control" formControlName="username">
+                        <div [hidden]="!(loginForm.controls.username.hasError('pattern') && loginForm.controls.username.dirty)">
+                            <p class="help-block">Invalid Email address </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group label-floating" [ngClass]="{'has-error': !loginForm.controls.password.valid}">
+                    <div class="form-group label-floating">
+                        <label class="control-label">Password</label>
+                        <input type="password" class="form-control" formControlName="password">
+                        <div [hidden]="!(loginForm.controls.password.hasError('required') && loginForm.controls.password.dirty)">
+                            <p class="help-block">Required Field </p>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-danger" >{{message}}</p>
+
+                <div style="text-align: right">
+                    <button class="btn btn-success" [disabled]="!loginForm.valid" (click)="loginUser(loginForm.value)">Login</button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</div>
+
+

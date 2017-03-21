@@ -1,0 +1,27 @@
+<div *ngIf="checkoutBooks.length == 0">
+    <p class="text-info">Your Cart is empty</p>
+</div> 
+
+
+<div *ngIf="checkoutBooks.length > 0" class="col-sm-6" >
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Cart</div>
+        <div class="panel-body">
+            <div *ngFor="let book of checkoutBooks">
+                <div class="list-group-item">
+                    <div class="row-content">
+                        <p> {{book.name}} </p>
+                        <p class="list-group-item-text"><em>{{book.author.join(", ")}}</em></p>
+                    </div>
+                    <div class="list-group-separator"></div>
+                </div>
+            </div>
+            <div style="text-align: right">
+                <button href="javascript:void(0)" class="btn btn-success" (click)="checkout()">Checkout Books</button>
+            </div>
+           
+        </div>
+    </div>
+
+</div>

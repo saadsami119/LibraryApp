@@ -1,0 +1,28 @@
+.wrap-panel{
+    display: flex;
+}
+
+html,body{
+    padding-right:1px;
+    padding-left: 1px;  
+    background-color: white;   
+}
+
+.panel-default > .panel-heading {
+  background-color : #9e9e9e !important;
+  color : white;
+ 
+}
+
+.navbar-default{
+    background-color:#1a237e !important;
+}
+
+.table-responsive {
+    max-height:50px;
+}
+
+.panel-collapse{
+    overflow-y:auto;
+    max-height:400px;
+}
