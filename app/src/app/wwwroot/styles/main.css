@@ -26,3 +26,6 @@ html,body{
     overflow-y:auto;
     max-height:400px;
 }
+.list-group-item{
+    padding: 0px,10px;
+}

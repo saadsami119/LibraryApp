@@ -1,0 +1,23 @@
+<div class="col-md-5" >
+    <div>
+        <div class="container-fluid">
+            <div class="well" style="height: 80%;overflow-y:auto;">
+                <legend>Books Issued</legend>
+                <div *ngFor="let historie of checkoutHistorie">
+                    <div class="list-group-item">
+                        <div class="row-content">
+                            <div class="least-content">
+                                <h4>{{historie.date | date: 'dd-MM-yyyy'}}</h4>
+                            </div>
+                            <div *ngFor="let book of historie.books">
+                                <p><em> {{book}}</em></p>
+                            </div>
+
+                        </div>
+                        <div class="list-group-separator"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

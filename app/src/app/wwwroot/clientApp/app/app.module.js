@@ -19,11 +19,13 @@ var login_component_1 = require("../login/login.component");
 var alert_component_1 = require("../alert/alert.component");
 var navbar_component_1 = require("../navbar/navbar.component");
 var checkout_component_1 = require("../checkout/checkout.component");
+var home_component_1 = require("../home/home.component");
 var appRoutes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
     { path: 'books', component: books_component_1.default },
     { path: 'login', component: login_component_1.default },
-    { path: 'checkout', component: checkout_component_1.default }
+    { path: 'checkout', component: checkout_component_1.default },
+    { path: 'home', component: home_component_1.default }
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -33,7 +35,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, forms_1.ReactiveFormsModule, http_1.HttpModule, router_1.RouterModule.forRoot(appRoutes)],
-        declarations: [app_component_1.AppComponent, navbar_component_1.default, books_component_1.default, login_component_1.default, checkout_component_1.default, alert_component_1.default],
+        declarations: [app_component_1.AppComponent, home_component_1.default, navbar_component_1.default, books_component_1.default, login_component_1.default, checkout_component_1.default, alert_component_1.default],
         bootstrap: [app_component_1.AppComponent]
     }),
     __metadata("design:paramtypes", [])

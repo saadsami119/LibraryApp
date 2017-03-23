@@ -10,20 +10,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var http_service_1 = require("../app/services/http.service");
-var LoginService = (function () {
-    function LoginService(_httpService) {
+var HomeService = (function () {
+    function HomeService(_httpService) {
         this._httpService = _httpService;
     }
-    LoginService.prototype.verifyUser = function (username, password) {
-        var url = "/api/account/login/username/" + username + "/password/" + password;
+    HomeService.prototype.getAllCheckedoutBooks = function (username) {
+        var url = "/api/checkout/user/" + username;
         return this._httpService.get(url);
     };
-    return LoginService;
+    return HomeService;
 }());
-LoginService = __decorate([
+HomeService = __decorate([
     core_1.Injectable(),
     __metadata("design:paramtypes", [http_service_1.default])
-], LoginService);
+], HomeService);
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = LoginService;
-//# sourceMappingURL=login.service.js.map
+exports.default = HomeService;
+//# sourceMappingURL=home.service.js.map

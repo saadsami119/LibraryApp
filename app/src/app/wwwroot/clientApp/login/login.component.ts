@@ -15,8 +15,7 @@ import AppStoreService from "../app/services/appStore.service";
 })
 
 export default class LoginComponent implements OnInit {
-    public loginForm: FormGroup;
-    public message: string;
+    public loginForm: FormGroup;   
 
     constructor(
         private _fb: FormBuilder,

@@ -20,15 +20,8 @@ namespace app.Server.Controllers
         public IActionResult GetBooks(string name = null, string author = null)
         {
             var searchedBooks = _bookService.GetBooks(name, author);
-
             var data = searchedBooks.Select(b => new { Id = b.Id, Name = b.Name, Author = b.BooksAuthors.Select(x => x.Author.Name) });
-
-            var jsonResponse = new JsonResponse
-            {
-                Successful = true,
-                Error = string.Empty,
-                Data = data
-            };
+            var jsonResponse = new JsonResponse{Successful = true,Error = string.Empty,Data = data};
 
             return Json(jsonResponse);
         }

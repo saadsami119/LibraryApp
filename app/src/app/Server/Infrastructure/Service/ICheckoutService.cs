@@ -6,5 +6,7 @@ namespace app.Server.Infrastructure.Service
     public interface ICheckoutService
     {
         void Checkout(IEnumerable<Book> books , string username);
+
+        IEnumerable<Checkout> GetCheckedoutBooks(string username);
     }
 }

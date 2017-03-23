@@ -9,6 +9,7 @@ import LoginComponent from "../login/login.component";
 import AlertComponent from "../alert/alert.component";
 import NavBarComponent from "../navbar/navbar.component";
 import CheckoutComponent from "../checkout/checkout.component";
+import HomeComponent from "../home/home.component";
 
 
 
@@ -17,12 +18,13 @@ const appRoutes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
     { path: 'books', component: BooksComponent },
     { path: 'login', component: LoginComponent },
-    { path: 'checkout', component: CheckoutComponent }
+    { path: 'checkout', component: CheckoutComponent },
+    {path:'home' , component: HomeComponent}
 ];
 
 @NgModule({
     imports: [BrowserModule, FormsModule,ReactiveFormsModule, HttpModule, RouterModule.forRoot(appRoutes)],
-    declarations: [AppComponent, NavBarComponent,BooksComponent,LoginComponent,CheckoutComponent,AlertComponent],
+    declarations: [AppComponent, HomeComponent,NavBarComponent,BooksComponent,LoginComponent,CheckoutComponent,AlertComponent],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

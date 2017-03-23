@@ -2,7 +2,20 @@
 
 var libs = './wwwroot/vendor/';
 
+gulp.task('default', ['copy-dependencies']);
 
+gulp.task('copy-dependencies', [
+    'copy-dependency:core-js',
+    'copy-dependency:zone.js',
+    'copy-dependency:reflect-metadata',
+    'copy-dependency:systemjs',
+    'copy-dependency:rxjs',
+    'copy-dependency:angular-in-memory-web-api',
+    'copy-dependency:angular',
+    'copy-dependency:bootstrap',
+    'copy-dependency:jquery',
+    'copy-dependency:bootstrap-material-design'
+]);
 
 gulp.task('copy-dependency:core-js', function () {
     gulp.src([
@@ -63,17 +76,3 @@ gulp.task('copy-dependency:bootstrap-material-design', function () {
           'node_modules/bootstrap-material-design/dist/**/*.*'
     ]).pipe(gulp.dest(libs + 'bootstrap-material-design'));
 });
-
-
-gulp.task('copy-dependencies', [
-    'copy-dependency:core-js',
-    'copy-dependency:zone.js',
-    'copy-dependency:reflect-metadata',
-    'copy-dependency:systemjs',
-    'copy-dependency:rxjs',
-    'copy-dependency:angular-in-memory-web-api',
-    'copy-dependency:angular',
-    'copy-dependency:bootstrap',
-    'copy-dependency:jquery',
-    'copy-dependency:bootstrap-material-design'
-]);

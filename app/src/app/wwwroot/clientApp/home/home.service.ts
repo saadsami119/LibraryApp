@@ -1,15 +1,16 @@
 import { Injectable } from "@angular/core";
 import HttpService from "../app/services/http.service";
 import { Observable } from "rxjs/Observable";
-
+import Book from "../books/book.model";
+import CheckoutHistory from "./model/checkoutHistorie.model";
 
 @Injectable()
-export default class LoginService {
+export default class HomeService {
     constructor(private _httpService: HttpService) {
     }
 
-    verifyUser(username: string, password: string): Observable<boolean> {
-        var url = "/api/account/login/username/" + username + "/password/" + password;
+    getAllCheckedoutBooks(username: string): Observable<Array<CheckoutHistory>> {
+        var url = "/api/checkout/user/" + username;
         return this._httpService.get(url);
     }
 }

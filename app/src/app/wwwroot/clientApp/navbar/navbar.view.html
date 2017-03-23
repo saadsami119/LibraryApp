@@ -1,18 +1,24 @@
 <div class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class='navbar-brand' [routerLink]="['/']"> <span class='glyphicon glyphicon-home'></span> ABC Library</a>
+            <a class='navbar-brand' [routerLink]="['/home']"><span class="glyphicon glyphicon-book"></span>  Library Application</a>
         </div>
-         <div *ngIf="isUserLoggedIn" class="navbar-collapse collapse navbar-responsive-collapse">
+        <div *ngIf="isUserLoggedIn" class="navbar-collapse collapse navbar-responsive-collapse">
             <ul *ngIf="isUserLoggedIn" class='nav navbar-nav'>
                 <li [routerLinkActive]="['link-active']">
                     <a class="disabled" [routerLink]="['/books']">
                         <span class='glyphicon glyphicon-list'></span> Books
+                    </a>
+                </li>
+
+                <li [routerLinkActive]="['link-active']">
+                    <a class="disabled" [routerLink]="['/home']">
+                        <span class='glyphicon glyphicon-home'></span> Home
                     </a>
                 </li>
 
