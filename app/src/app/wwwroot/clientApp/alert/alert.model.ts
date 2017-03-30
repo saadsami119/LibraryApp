@@ -1,5 +1,4 @@
-export default class Alert {
-    //caption: string;
+export default class Alert {   
     message: string;
     type: string;
     id: number;
@@ -8,12 +7,6 @@ export default class Alert {
        this.id = Math.floor((Math.random() * 6) + 1);
        this.message = msg;
        this.type = type;
-       // this.caption = cpt;
-        
-        //this.type = this.getAlertType(type);
-        //console.log(this.type);
-        //
-
     }
 
     private getAlertType(type: string): string {
