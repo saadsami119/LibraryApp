@@ -1,13 +1,12 @@
 <div *ngIf="checkoutBooks.length == 0">
-    <h3 class="text-info">Your Cart is empty</h3>
+    <h4 class="text-info">Your Cart is empty.</h4>
 </div>
 
-
-<div *ngIf="checkoutBooks.length > 0" class="col-sm-6">
-    <div class="container">
-        <div class="well">
-            <h3>Cart</h3>
-            <div *ngFor="let book of checkoutBooks">
+<div *ngIf="checkoutBooks.length > 0" class="col-sm-6 col-sm-offset-1" style="margin-top: 1%">
+    <div class="panel panel-default">
+        <div class="panel-heading">Books</div>
+        <div class="panel-body">
+             <div *ngFor="let book of checkoutBooks">
                 <div class="list-group-item">
                     <div class="row-content">
                         <strong> {{book.name}} </strong>
@@ -21,5 +20,4 @@
             </div>
         </div>
     </div>
-
 </div>

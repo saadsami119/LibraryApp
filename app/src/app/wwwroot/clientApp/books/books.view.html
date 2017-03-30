@@ -1,54 +1,56 @@
-<div class="container-fluid">
-    <div class="col-sm-9 col-sm-offset-1 well infobox">
-        <h4>Search</h4>
-        <div class="row">
-            <div class="col-md-5">
-                <div class="form-group form-group-sm label-floating">
-                    <label class="control-label">Book</label>
-                    <input type="text" class="form-control" [(ngModel)]="searchedBookName" />
+<div class=" col-sm-9 col-sm-offset-1" style="margin-top: 1%">
+    <div class="panel panel-default">
+        <div class="panel-heading">Search</div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="form-group form-group-sm label-floating">
+                        <label class="control-label">Book</label>
+                        <input type="text" class="form-control" [(ngModel)]="searchedBookName" />
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-5">
-                <div class="form-group form-group-sm label-floating">
-                    <label class="control-label">Author</label>
-                    <input type="text" class="form-control" [(ngModel)]="searchedAuthorName" />
+                <div class="col-md-5">
+                    <div class="form-group form-group-sm label-floating">
+                        <label class="control-label">Author</label>
+                        <input type="text" class="form-control" [(ngModel)]="searchedAuthorName" />
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-2">
-                <button type="submit" class="btn btn-success" (click)="search()">Search</button>
-            </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-success" (click)="search()">Search</button>
+                </div>
 
 
+            </div>
         </div>
     </div>
 </div>
 
-<div class="container-fluid" style="margin-top: 20px">
-    <div class="col-sm-9 col-sm-offset-1 well infobox">
+<div class=" col-sm-9 col-sm-offset-1">
+    <div class="panel panel-default">
+        <div class="panel-heading">Books</div>
+        <div class="panel-body">
+            <div *ngIf="searcedBooks.length > 0" class="panel-collapse">
+                <table class="table  table-responsive table-striped table-hover">
+                    <thead>
+                        <tr style="font-size: small; font-weight: normal;">
+                            <th>Name</th>
+                            <th>Authors</th>
+                            <th></th>
+                        </tr>
+                    </thead>
 
-        <h4>Results</h4>
-        <div *ngIf="searcedBooks.length > 0" class="panel-collapse">
-            <table class="table  table-responsive table-striped table-hover">
-                <thead>
-                    <tr style="font-size: small; font-weight: normal;">
-                        <th>Name</th>
-                        <th>Authors</th>
-                        <th></th>
-                    </tr>
-                </thead>
-
-                <tbody style="font-size: small; font-weight: normal;">
-                    <tr *ngFor="let book of searcedBooks">
-                        <td>{{book.name}}</td>
-                        <td>{{book.author.join(", ")}}</td>
-                        <td>
-                            <a href="javascript:void(0)" class="btn btn-sm btn-info" (click)="addToCart(book)" style="margin: 0;padding: 0">
-                                <span class='glyphicon glyphicon-shopping-cart'></span>
-                            </a>
-                    </tr>
-                </tbody>
-            </table>
+                    <tbody style="font-size: small; font-weight: normal;">
+                        <tr *ngFor="let book of searcedBooks">
+                            <td>{{book.name}}</td>
+                            <td>{{book.author.join(", ")}}</td>
+                            <td>
+                                <a href="javascript:void(0)" class="btn btn-sm btn-info" (click)="addToCart(book)" style="margin: 0;padding: 0">
+                                    <span class='glyphicon glyphicon-shopping-cart'></span>
+                                </a>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-
 </div>

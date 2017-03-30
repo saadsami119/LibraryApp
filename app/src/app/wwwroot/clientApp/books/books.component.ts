@@ -1,4 +1,5 @@
-﻿import { Component } from "@angular/core";
+﻿import { Component, OnInit } from "@angular/core";
+import { Router } from '@angular/router';
 import BookService from "./books.service"
 import AppStoreService from "../app/services/appStore.service";
 import AlertService from "../alert/alert.service";
@@ -10,7 +11,7 @@ import Book from "./book.model";
     templateUrl: "books.view.html",
     providers: [BookService]
 })
-export default class BooksComponent {
+export default class BooksComponent implements OnInit {
     public searchedBookName: string;
     public searchedAuthorName: string;
     public searcedBooks: Array<Book>;
@@ -18,8 +19,15 @@ export default class BooksComponent {
     constructor(
         private _bookService: BookService,
         private _alertService: AlertService,
-        private _appStoreService: AppStoreService) {
+        private _appStoreService: AppStoreService,
+        private _router: Router) {
         this.searcedBooks = new Array<Book>();
+    }
+
+    public ngOnInit() {
+        if (this._appStoreService.getUsername() == undefined) {
+            this._router.navigate(["login"]);
+        }
     }
 
     public search(): void {
@@ -30,14 +38,14 @@ export default class BooksComponent {
     }
 
     public addToCart(book: Book): void {
-        if (this.isBookInCart(book.id)) {
-            this._alertService.showError(book.name + " has been already added to cart!");
+        if (this.isBookAlreadyInCart(book.id)) {
+            this._alertService.showInfo(book.name + " has been already added to the cart!");
             return;
         }
         this._appStoreService.addBookToCart(book);
     }
 
-    private isBookInCart(bookId: number): boolean {
+    private isBookAlreadyInCart(bookId: number): boolean {
         return this._appStoreService.getCart().find(x => x.id == bookId) !== undefined;
     }
 

@@ -42,8 +42,8 @@ namespace app.Server
             app.UseCors("AllowAll");
             app.UseMvc();
        
-            //var dbContext = app.ApplicationServices.GetRequiredService<IDatabaseContext>();
-            //dbContext.CreateDatabase();
+            var dbContext = app.ApplicationServices.GetRequiredService<IDatabaseContext>();
+            dbContext.CreateDatabase();
         }
 
         private DefaultFilesOptions GetDefaultFileOptions()

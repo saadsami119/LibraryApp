@@ -34,7 +34,7 @@ export default class LoginComponent implements OnInit {
             .subscribe((isValid) => {
                 if (isValid) {
                     this._appStoreService.setUsername(user.username);
-                    this._router.navigate(["books"]);
+                    this._router.navigate(["home"]);
                 }
                 else { this._alertService.showError("Invalid login credentials! Please try again."); }
             }, error => { this._alertService.showError(error) });

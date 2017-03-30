@@ -25,6 +25,10 @@ var AlertService = (function () {
         var alert = new alert_model_1.default(msg, "alert-danger");
         this._subject.next(alert);
     };
+    AlertService.prototype.showInfo = function (msg) {
+        var alert = new alert_model_1.default(msg, "alert-info");
+        this._subject.next(alert);
+    };
     AlertService.prototype.getAlert = function () {
         return this._subject.asObservable();
     };

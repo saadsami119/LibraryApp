@@ -31,7 +31,7 @@ var LoginComponent = (function () {
             .subscribe(function (isValid) {
             if (isValid) {
                 _this._appStoreService.setUsername(user.username);
-                _this._router.navigate(["books"]);
+                _this._router.navigate(["home"]);
             }
             else {
                 _this._alertService.showError("Invalid login credentials! Please try again.");

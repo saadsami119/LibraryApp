@@ -25,6 +25,11 @@ export default class AlertService implements OnInit {
         this._subject.next(alert);
     }
 
+    public showInfo(msg:string):void{
+        let alert = new Alert(msg, "alert-info");
+        this._subject.next(alert);
+    }
+
     public getAlert(): Observable<Alert> {
         return this._subject.asObservable();
     }

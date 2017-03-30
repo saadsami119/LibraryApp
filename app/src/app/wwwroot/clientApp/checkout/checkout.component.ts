@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from '@angular/router';
 import AppStoreService from "../app/services/appStore.service";
 import CheckoutService from "./checkout.service";
 import AlertService from "../alert/alert.service";
@@ -18,11 +19,15 @@ export default class CheckoutComponent implements OnInit {
     constructor(
         private _appStoreService: AppStoreService,
         private _checkoutService: CheckoutService,
-        private _alertService: AlertService) {
+        private _alertService: AlertService,
+        private _router: Router) {
         this.checkoutBooks = new Array<Book>();
     }
 
     ngOnInit() {
+        if (this._appStoreService.getUsername() == undefined) {
+            this._router.navigate(["login"]);
+        }
         this.checkoutBooks = this._appStoreService.getCart();
     }
 

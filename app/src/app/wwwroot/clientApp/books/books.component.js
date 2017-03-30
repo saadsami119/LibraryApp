@@ -9,16 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
 var books_service_1 = require("./books.service");
 var appStore_service_1 = require("../app/services/appStore.service");
 var alert_service_1 = require("../alert/alert.service");
 var BooksComponent = (function () {
-    function BooksComponent(_bookService, _alertService, _appStoreService) {
+    function BooksComponent(_bookService, _alertService, _appStoreService, _router) {
         this._bookService = _bookService;
         this._alertService = _alertService;
         this._appStoreService = _appStoreService;
+        this._router = _router;
         this.searcedBooks = new Array();
     }
+    BooksComponent.prototype.ngOnInit = function () {
+        if (this._appStoreService.getUsername() == undefined) {
+            this._router.navigate(["login"]);
+        }
+    };
     BooksComponent.prototype.search = function () {
         var _this = this;
         this._bookService.getBooks(this.searchedBookName, this.searchedAuthorName)
@@ -27,13 +34,13 @@ var BooksComponent = (function () {
         }, function (error) { _this._alertService.showError(error); });
     };
     BooksComponent.prototype.addToCart = function (book) {
-        if (this.isBookInCart(book.id)) {
-            this._alertService.showError(book.name + " has been already added to cart!");
+        if (this.isBookAlreadyInCart(book.id)) {
+            this._alertService.showInfo(book.name + " has been already added to the cart!");
             return;
         }
         this._appStoreService.addBookToCart(book);
     };
-    BooksComponent.prototype.isBookInCart = function (bookId) {
+    BooksComponent.prototype.isBookAlreadyInCart = function (bookId) {
         return this._appStoreService.getCart().find(function (x) { return x.id == bookId; }) !== undefined;
     };
     return BooksComponent;
@@ -47,7 +54,8 @@ BooksComponent = __decorate([
     }),
     __metadata("design:paramtypes", [books_service_1.default,
         alert_service_1.default,
-        appStore_service_1.default])
+        appStore_service_1.default,
+        router_1.Router])
 ], BooksComponent);
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = BooksComponent;

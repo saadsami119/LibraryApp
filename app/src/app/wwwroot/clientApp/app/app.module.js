@@ -14,6 +14,7 @@ var platform_browser_1 = require("@angular/platform-browser");
 var app_component_1 = require("./app.component");
 var http_1 = require("@angular/http");
 var router_1 = require("@angular/router");
+var common_1 = require("@angular/common");
 var books_component_1 = require("../books/books.component");
 var login_component_1 = require("../login/login.component");
 var alert_component_1 = require("../alert/alert.component");
@@ -34,8 +35,9 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, forms_1.ReactiveFormsModule, http_1.HttpModule, router_1.RouterModule.forRoot(appRoutes)],
+        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, forms_1.ReactiveFormsModule, http_1.HttpModule, router_1.RouterModule.forRoot(appRoutes, { useHash: true })],
         declarations: [app_component_1.AppComponent, home_component_1.default, navbar_component_1.default, books_component_1.default, login_component_1.default, checkout_component_1.default, alert_component_1.default],
+        providers: [{ provide: common_1.LocationStrategy, useClass: common_1.HashLocationStrategy }],
         bootstrap: [app_component_1.AppComponent]
     }),
     __metadata("design:paramtypes", [])
