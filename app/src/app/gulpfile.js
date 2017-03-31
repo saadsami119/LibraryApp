@@ -1,6 +1,8 @@
 ﻿var gulp = require('gulp');
-
 var libs = './wwwroot/vendor/';
+var del = require('del');
+var ts = require("gulp-typescript");
+var tsProject = ts.createProject("tsconfig.json");
 
 gulp.task('default', ['copy-dependencies']);
 
@@ -16,6 +18,20 @@ gulp.task('copy-dependencies', [
     'copy-dependency:jquery',
     'copy-dependency:bootstrap-material-design'
 ]);
+
+gulp.task('clean-js.map', function () {
+  return del('./wwwroot/ts/**/*.js.map');
+});
+
+gulp.task('clean', ['clean-js.map'], function () {
+  return del('./wwwroot/ts/**/*.js');
+});
+
+gulp.task("tsc" ,  ['clean', 'copy-dependencies'], function () {
+    return tsProject.src()
+        .pipe(tsProject())
+        .js.pipe(gulp.dest("./wwwroot/ts"));
+});
 
 gulp.task('copy-dependency:core-js', function () {
     gulp.src([

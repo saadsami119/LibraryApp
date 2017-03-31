@@ -2,16 +2,11 @@
   "version": "1.0.0",
   "name": "asp.net",
   "private": true,
-
   "scripts": {
-    "npm-restore": "npm install --save",
-    "nuget-restore": "dotnet restore",
-    "gulp-task": "gulp default",
-    "dotnet-build": "dotnet build",
-    "dotnet-deploy": "dotnet run",
-    "start": "npm run npm-restore && npm run nuget-restore && npm run gulp-task && npm run dotnet-build && npm run dotnet-deploy"	
+    "dependencies-restore": "npm install --save && dotnet restore",    
+    "compile": "npm run dependencies-restore && gulp tsc && dotnet build",
+    "start": "dotnet run"
   },
-
   "devDependencies": {
     "concurrently": "3.0.0",
     "gulp": "3.9.1",
@@ -35,6 +30,8 @@
     "rxjs": "5.0.0-beta.12",
     "systemjs": "0.19.39",
     "zone.js": "0.6.25",
-    "bootstrap-material-design": "0.5.10"   
-  }  
+    "bootstrap-material-design": "0.5.10",
+    "del": "2.2.2",
+    "gulp-typescript": "3.1.6"
+  }
 }
