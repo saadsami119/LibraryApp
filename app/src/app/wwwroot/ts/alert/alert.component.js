@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 var AlertComponent = (function () {
     function AlertComponent() {
         this.alerts = new Array();
@@ -27,20 +27,21 @@ var AlertComponent = (function () {
             }
         }
     };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Array), 
-        __metadata('design:paramtypes', [Array])
-    ], AlertComponent.prototype, "show", null);
-    AlertComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'alert',
-            templateUrl: 'alert.view.html'
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AlertComponent);
     return AlertComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Array),
+    __metadata("design:paramtypes", [Array])
+], AlertComponent.prototype, "show", null);
+AlertComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'alert',
+        templateUrl: 'alert.view.html'
+    }),
+    __metadata("design:paramtypes", [])
+], AlertComponent);
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = AlertComponent;
+//# sourceMappingURL=alert.component.js.map

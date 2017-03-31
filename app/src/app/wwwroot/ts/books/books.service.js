@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 var http_service_1 = require("../app/services/http.service");
 var BookService = (function () {
     function BookService(_httpService) {
@@ -20,11 +20,12 @@ var BookService = (function () {
         var url = "/api/book/name/" + name + "/author/" + author;
         return this._httpService.get(url);
     };
-    BookService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_service_1.default])
-    ], BookService);
     return BookService;
 }());
+BookService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_service_1.default])
+], BookService);
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = BookService;
+//# sourceMappingURL=books.service.js.map

@@ -1,7 +1,11 @@
 <div class="col-md-5" style="margin-top: 1%">
     <div class="panel panel-default">
         <div class="panel-heading">Books Issued</div>
-        <div class="panel-body" style="height: 80%;overflow-y:auto;">
+        <div class="panel-body">
+     <div *ngIf="checkoutHistorie.length === 0">
+         <h5 class="text-success">There are no issued books.</h5>
+     </div>
+
             <div *ngFor="let historie of checkoutHistorie">
                 <div class="list-group-item">
                     <div class="row-content">

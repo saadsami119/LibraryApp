@@ -18,11 +18,12 @@ var HomeService = (function () {
         var url = "/api/checkout/user/" + username;
         return this._httpService.get(url);
     };
-    HomeService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_service_1.default])
-    ], HomeService);
     return HomeService;
 }());
+HomeService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_service_1.default])
+], HomeService);
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = HomeService;
+//# sourceMappingURL=home.service.js.map

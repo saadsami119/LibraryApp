@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var Subject_1 = require('rxjs/Subject');
+var Subject_1 = require("rxjs/Subject");
 var alert_model_1 = require("./alert.model");
 var AlertService = (function () {
     function AlertService() {
@@ -32,11 +32,12 @@ var AlertService = (function () {
     AlertService.prototype.getAlert = function () {
         return this._subject.asObservable();
     };
-    AlertService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
-    ], AlertService);
     return AlertService;
 }());
+AlertService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [])
+], AlertService);
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = AlertService;
+//# sourceMappingURL=alert.service.js.map

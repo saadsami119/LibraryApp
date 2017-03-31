@@ -1,22 +1,24 @@
-<div *ngIf="checkoutBooks.length == 0">
-    <h4 class="text-info">Your Cart is empty.</h4>
-</div>
-
-<div *ngIf="checkoutBooks.length > 0" class="col-sm-6 col-sm-offset-1" style="margin-top: 1%">
+<div class="col-sm-6 col-sm-offset-1" style="margin-top: 1%">
     <div class="panel panel-default">
-        <div class="panel-heading">Books</div>
+        <div class="panel-heading">Checkout </div>
         <div class="panel-body">
-             <div *ngFor="let book of checkoutBooks">
-                <div class="list-group-item">
-                    <div class="row-content">
-                        <strong> {{book.name}} </strong>
-                        <p class="list-group-item-text"><em>{{book.author.join(", ")}}</em></p>
-                    </div>
-                    <div class="list-group-separator"></div>
-                </div>
+            <div *ngIf="checkoutBooks.lenght === 0">
+                <h4 class="text-success">No Books available for checkout</h4>
             </div>
-            <div style="text-align: right">
-                <button href="javascript:void(0)" class="btn btn-success" (click)="checkout()">Checkout</button>
+            
+            <div *ngIf="checkoutBooks.length > 0">
+                <div *ngFor="let book of checkoutBooks">
+                    <div class="list-group-item">
+                        <div class="row-content">
+                            <strong> {{book.name}} </strong>
+                            <p class="list-group-item-text"><em>{{book.author.join(", ")}}</em></p>
+                        </div>
+                        <div class="list-group-separator"></div>
+                    </div>
+                </div>
+                <div style="text-align: right">
+                    <button href="javascript:void(0)" class="btn btn-success" (click)="checkout()">Checkout</button>
+                </div>
             </div>
         </div>
     </div>

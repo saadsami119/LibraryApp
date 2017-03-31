@@ -6,3 +6,4 @@ var User = (function () {
 }());
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = User;
+//# sourceMappingURL=login.model.js.map

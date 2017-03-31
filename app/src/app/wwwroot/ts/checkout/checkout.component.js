@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var router_1 = require('@angular/router');
+var router_1 = require("@angular/router");
 var appStore_service_1 = require("../app/services/appStore.service");
 var checkout_service_1 = require("./checkout.service");
 var alert_service_1 = require("../alert/alert.service");
@@ -43,16 +43,20 @@ var CheckoutComponent = (function () {
             _this._alertService.showError(error);
         });
     };
-    CheckoutComponent = __decorate([
-        core_1.Component({
-            selector: "checkout",
-            moduleId: module.id,
-            templateUrl: "checkout.view.html",
-            providers: [checkout_service_1.default]
-        }), 
-        __metadata('design:paramtypes', [appStore_service_1.default, checkout_service_1.default, alert_service_1.default, router_1.Router])
-    ], CheckoutComponent);
     return CheckoutComponent;
 }());
+CheckoutComponent = __decorate([
+    core_1.Component({
+        selector: "checkout",
+        moduleId: module.id,
+        templateUrl: "checkout.view.html",
+        providers: [checkout_service_1.default]
+    }),
+    __metadata("design:paramtypes", [appStore_service_1.default,
+        checkout_service_1.default,
+        alert_service_1.default,
+        router_1.Router])
+], CheckoutComponent);
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = CheckoutComponent;
+//# sourceMappingURL=checkout.component.js.map

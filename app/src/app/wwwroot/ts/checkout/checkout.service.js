@@ -18,11 +18,12 @@ var CheckoutService = (function () {
         var url = "/api/checkout/";
         return this._httpService.post(url, checkout);
     };
-    CheckoutService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_service_1.default])
-    ], CheckoutService);
     return CheckoutService;
 }());
+CheckoutService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_service_1.default])
+], CheckoutService);
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = CheckoutService;
+//# sourceMappingURL=checkout.service.js.map

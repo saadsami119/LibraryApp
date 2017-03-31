@@ -18,11 +18,12 @@ var LoginService = (function () {
         var url = "/api/account/login/username/" + username + "/password/" + password;
         return this._httpService.get(url);
     };
-    LoginService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_service_1.default])
-    ], LoginService);
     return LoginService;
 }());
+LoginService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_service_1.default])
+], LoginService);
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = LoginService;
+//# sourceMappingURL=login.service.js.map

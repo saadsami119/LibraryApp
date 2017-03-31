@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var Subject_1 = require('rxjs/Subject');
+var Subject_1 = require("rxjs/Subject");
 var AppStoreService = (function () {
     function AppStoreService() {
         this._cart = new Array();
@@ -40,11 +40,12 @@ var AppStoreService = (function () {
         this._cart = new Array();
         this._cartSubject.next(this._cart);
     };
-    AppStoreService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
-    ], AppStoreService);
     return AppStoreService;
 }());
+AppStoreService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [])
+], AppStoreService);
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = AppStoreService;
+//# sourceMappingURL=appStore.service.js.map

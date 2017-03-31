@@ -43,6 +43,7 @@ export default class BooksComponent implements OnInit {
             return;
         }
         this._appStoreService.addBookToCart(book);
+        this._alertService.showSuccess(book.name + " has been added to the cart!");
     }
 
     private isBookAlreadyInCart(bookId: number): boolean {

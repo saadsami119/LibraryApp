@@ -25,20 +25,20 @@ export default class HomeComponent implements OnInit {
         private _alertService: AlertService,
         private _homeService: HomeService,        
         private _appStoreService: AppStoreService) {
+            this.checkoutHistorie = new Array<CheckoutHistory>();
     }
 
     public ngOnInit() {
        if(this._appStoreService.getUsername() === undefined){
             this._router.navigate(["login"]);
-       }
+        }
        
         this.getCheckedoutBooks();
     }
 
     private getCheckedoutBooks(): void {
         this._homeService.getAllCheckedoutBooks(this._appStoreService.getUsername())
-            .subscribe((historie) => {
-                console.log(historie);
+            .subscribe((historie) => {                           
                 this.checkoutHistorie = historie;
             }, error => {
                 this._alertService.showError(error);

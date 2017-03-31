@@ -6,3 +6,4 @@ var Book = (function () {
 }());
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = Book;
+//# sourceMappingURL=books.model.js.map

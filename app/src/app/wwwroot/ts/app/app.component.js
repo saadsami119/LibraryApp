@@ -25,15 +25,17 @@ var AppComponent = (function () {
             _this.alerts.push(alert);
         });
     };
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            moduleId: module.id,
-            templateUrl: "app.view.html",
-            providers: [alert_service_1.default, http_service_1.default, appStore_service_1.default]
-        }), 
-        __metadata('design:paramtypes', [alert_service_1.default, appStore_service_1.default])
-    ], AppComponent);
     return AppComponent;
 }());
+AppComponent = __decorate([
+    core_1.Component({
+        selector: 'my-app',
+        moduleId: module.id,
+        templateUrl: "app.view.html",
+        providers: [alert_service_1.default, http_service_1.default, appStore_service_1.default]
+    }),
+    __metadata("design:paramtypes", [alert_service_1.default,
+        appStore_service_1.default])
+], AppComponent);
 exports.AppComponent = AppComponent;
+//# sourceMappingURL=app.component.js.map

@@ -6,3 +6,4 @@ var CheckoutHistory = (function () {
 }());
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = CheckoutHistory;
+//# sourceMappingURL=checkoutHistorie.model.js.map

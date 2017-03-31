@@ -6,3 +6,4 @@ var Checkout = (function () {
 }());
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = Checkout;
+//# sourceMappingURL=checkout.model.js.map

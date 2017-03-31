@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
 var appStore_service_1 = require("../app/services/appStore.service");
 var NavBarComponent = (function () {
     function NavBarComponent(_router, appStoreService) {
@@ -33,15 +33,17 @@ var NavBarComponent = (function () {
         this._router.navigate(["login"]);
         this.isUserLoggedIn = false;
     };
-    NavBarComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'nav-bar',
-            templateUrl: "navbar.view.html"
-        }), 
-        __metadata('design:paramtypes', [router_1.Router, appStore_service_1.default])
-    ], NavBarComponent);
     return NavBarComponent;
 }());
+NavBarComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'nav-bar',
+        templateUrl: "navbar.view.html"
+    }),
+    __metadata("design:paramtypes", [router_1.Router,
+        appStore_service_1.default])
+], NavBarComponent);
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = NavBarComponent;
+//# sourceMappingURL=navbar.component.js.map
